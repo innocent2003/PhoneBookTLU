@@ -10,6 +10,7 @@ public class Employee {
 
     private String employeeEmail;
     private String employeePhone;
+    private String adminId;
 
     public Employee(String id, String employeeName,  String employeeEmail, String employeePhone, String employeeAvatar, String adminId) {
         this.id = id;
@@ -88,6 +89,6 @@ public class Employee {
         this.adminId = adminId;
     }
 
-    private String adminId;
+
 
 }

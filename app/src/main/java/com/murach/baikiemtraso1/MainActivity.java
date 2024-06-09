@@ -2,6 +2,7 @@ package com.murach.baikiemtraso1;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.tabs.TabLayout;
+import com.google.android.material.tabs.TabLayoutMediator;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.ValueEventListener;
@@ -28,78 +31,99 @@ public class MainActivity extends AppCompatActivity {
     private ArrayAdapter<Admin> adapter;
     private AdminHelper adminHelper;
     private Admin selectedAdmin;
+    private TabLayout tabLayout;
+    private ViewPager2 viewPager;
+    private ViewPagerAdapter viewPagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        adminName = findViewById(R.id.adminName);
-        adminEmail = findViewById(R.id.adminEmail);
-        adminWebsite = findViewById(R.id.adminWebsite);
-        adminLogo = findViewById(R.id.adminLogo);
-        adminAddress = findViewById(R.id.adminAddress);
-        adminPhone = findViewById(R.id.adminPhone);
-        adminChildId = findViewById(R.id.adminChildId);
+//        adminName = findViewById(R.id.adminName);
+//        adminEmail = findViewById(R.id.adminEmail);
+//        adminWebsite = findViewById(R.id.adminWebsite);
+//        adminLogo = findViewById(R.id.adminLogo);
+//        adminAddress = findViewById(R.id.adminAddress);
+//        adminPhone = findViewById(R.id.adminPhone);
+//        adminChildId = findViewById(R.id.adminChildId);
+//
+//        btnAdd = findViewById(R.id.btnAdd);
+//        btnUpdate = findViewById(R.id.btnUpdate);
+//        btnDelete = findViewById(R.id.btnDelete);
+//        btnNewPage = findViewById(R.id.btnNewPage);
+//        btnNewPage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent a = new Intent(MainActivity.this, MainActivity2.class);
+//                startActivity(a);
+//            }
+//        });
 
-        btnAdd = findViewById(R.id.btnAdd);
-        btnUpdate = findViewById(R.id.btnUpdate);
-        btnDelete = findViewById(R.id.btnDelete);
-        btnNewPage = findViewById(R.id.btnNewPage);
-        btnNewPage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent a = new Intent(MainActivity.this, MainActivity2.class);
-                startActivity(a);
-            }
-        });
 
-
-        listViewAdmin = findViewById(R.id.listViewAdmin);
+//        listViewAdmin = findViewById(R.id.listViewAdmin);
         adminList = new ArrayList<>();
         adminHelper = new AdminHelper(); // Initialize AdminHelper
 
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, adminList);
-        listViewAdmin.setAdapter(adapter);
+//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, adminList);
+//        listViewAdmin.setAdapter(adapter);
 
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addAdmin();
+        tabLayout = findViewById(R.id.tab_layout);
+        viewPager = findViewById(R.id.view_pager);
+
+        viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager.setAdapter(viewPagerAdapter);
+
+        new TabLayoutMediator(tabLayout, viewPager, (tab, position) -> {
+            switch (position) {
+                case 0:
+                    tab.setText("Quản lý đơn vị");
+                    break;
+                case 1:
+                    tab.setText("Quản lý nhân viên");
+                    break;
             }
-        });
+        }).attach();
 
-        btnUpdate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updateAdmin();
-            }
-        });
+//        btnAdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                addAdmin();
+//            }
+//        });
+//
+//        btnUpdate.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                updateAdmin();
+//            }
+//        });
+//
+//        btnDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                deleteAdmin();
+//            }
+//        });
 
-        btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                deleteAdmin();
-            }
-        });
 
-
-        listViewAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                selectedAdmin = adminList.get(i);
-                // Populate fields with selectedAdmin data
-                adminName.setText(selectedAdmin.getAdminName());
-                adminEmail.setText(selectedAdmin.getAdminEmail());
-                adminWebsite.setText(selectedAdmin.getWebsiteUrl());
-                adminLogo.setText(selectedAdmin.getAdminLogo());
-                adminAddress.setText(selectedAdmin.getAdminAddress());
-                adminPhone.setText(selectedAdmin.getAdminPhone());
-                adminChildId.setText(selectedAdmin.getAdminChildId());
-            }
-        });
-
-        loadAdmins();
+//        listViewAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                selectedAdmin = adminList.get(i);
+//
+//                // Populate fields with selectedAdmin data
+////                adminName.setText(selectedAdmin.getAdminName());
+////                adminEmail.setText(selectedAdmin.getAdminEmail());
+////                adminWebsite.setText(selectedAdmin.getWebsiteUrl());
+////                adminLogo.setText(selectedAdmin.getAdminLogo());
+////                adminAddress.setText(selectedAdmin.getAdminAddress());
+////                adminPhone.setText(selectedAdmin.getAdminPhone());
+////                adminChildId.setText(selectedAdmin.getAdminChildId());
+//            }
+//        });
+//
+//        loadAdmins();
     }
 
     private void addAdmin() {
