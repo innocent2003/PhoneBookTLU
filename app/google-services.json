@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "131569117014",
+    "firebase_url": "https://testproject1-f2986-default-rtdb.firebaseio.com",
+    "project_id": "testproject1-f2986",
+    "storage_bucket": "testproject1-f2986.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131569117014:android:6c6f9f91b34732467a58f7",
+        "android_client_info": {
+          "package_name": "com.example.applicationdemo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt0V6BvSImfiQOzt1qFr_y4lFGfjwBDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131569117014:android:7e7d3cde472d0f047a58f7",
+        "android_client_info": {
+          "package_name": "com.example.democrud"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt0V6BvSImfiQOzt1qFr_y4lFGfjwBDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131569117014:android:a94feaec7eaeaf7e7a58f7",
+        "android_client_info": {
+          "package_name": "com.example.login_register_firebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt0V6BvSImfiQOzt1qFr_y4lFGfjwBDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131569117014:android:3c594f6773a197c87a58f7",
+        "android_client_info": {
+          "package_name": "com.murach.baikiemtraso1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt0V6BvSImfiQOzt1qFr_y4lFGfjwBDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:131569117014:android:4a5bfe6e9177beff7a58f7",
+        "android_client_info": {
+          "package_name": "com.murach.firebaselearning"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCt0V6BvSImfiQOzt1qFr_y4lFGfjwBDIc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
