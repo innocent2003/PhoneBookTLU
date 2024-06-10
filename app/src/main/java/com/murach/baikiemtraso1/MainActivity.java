@@ -62,11 +62,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 //        listViewAdmin = findViewById(R.id.listViewAdmin);
-        adminList = new ArrayList<>();
-        adminHelper = new AdminHelper(); // Initialize AdminHelper
-
-//        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, adminList);
-//        listViewAdmin.setAdapter(adapter);
+//        adminList = new ArrayList<>();
+//        adminHelper = new AdminHelper(); // Initialize AdminHelper
+//
+////        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, adminList);
+////        listViewAdmin.setAdapter(adapter);
 
         tabLayout = findViewById(R.id.tab_layout);
         viewPager = findViewById(R.id.view_pager);
