@@ -50,7 +50,7 @@ public class AddEmployeeActivity extends AppCompatActivity {
         imageView = findViewById(R.id.imageView);
         btnSelectImage = findViewById(R.id.btnSelectImage);
         btnUploadImage = findViewById(R.id.btnUploadImage);
-        btnAddEmployee = findViewById(R.id.btnAddEmployee);
+//        btnAddEmployee = findViewById(R.id.btnAddEmployee);
 
         // Initialize EmployeeHelper and StorageReference
         employeeHelper = new EmployeeHelper();
@@ -68,15 +68,16 @@ public class AddEmployeeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 uploadImage();
-            }
-        });
-
-        btnAddEmployee.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 addEmployee();
             }
         });
+
+//        btnAddEmployee.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                addEmployee();
+//            }
+//        });
     }
 
     private void openFileChooser() {
