@@ -1,3 +1,4 @@
+// FragmentTwo.java
 package com.murach.baikiemtraso1;
 
 import android.content.Intent;
@@ -5,7 +6,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -21,7 +21,7 @@ import java.util.List;
 
 public class FragmentTwo extends Fragment {
     Button addEmployeeButton;
-    private ArrayAdapter<Employee> adapter;
+    private EmployeeAdapter adapter;
     private ListView listViewEmployee;
     private List<Employee> employeeList;
     private EmployeeHelper employeeHelper;
@@ -40,7 +40,7 @@ public class FragmentTwo extends Fragment {
 
         // Initialize the list and adapter
         employeeList = new ArrayList<>();
-        adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, employeeList);
+        adapter = new EmployeeAdapter(getActivity(), R.layout.list_item_employee, employeeList);
         listViewEmployee.setAdapter(adapter);
 
         // Initialize EmployeeHelper
