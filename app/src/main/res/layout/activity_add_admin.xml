@@ -103,6 +103,20 @@
             android:layout_height="wrap_content"
             android:text="Them don vi" />
 
+    <ImageView
+        android:id="@+id/adminLogoPreview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="Admin Logo Preview" />
+
+    <Button
+        android:id="@+id/btnUploadLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Logo"
+        android:layout_marginTop="8dp" />
+
 
 
 </LinearLayout>
