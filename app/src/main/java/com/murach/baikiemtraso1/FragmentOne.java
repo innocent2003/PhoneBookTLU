@@ -62,10 +62,19 @@ public class FragmentOne extends Fragment {
         listViewAdmin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent1 = new Intent(getActivity(), DetailAdminActivity.class);
-                startActivity(intent1);
+                Admin selectedAdmin = adminList.get(i);
+                Intent intent = new Intent(getActivity(), DetailAdminActivity.class);
+                intent.putExtra("adminId", selectedAdmin.getId());
+                intent.putExtra("adminName", selectedAdmin.getAdminName());
+                intent.putExtra("adminEmail", selectedAdmin.getAdminEmail());
+                intent.putExtra("adminWebsite", selectedAdmin.getWebsiteUrl());
+                intent.putExtra("adminAddress", selectedAdmin.getAdminAddress());
+                intent.putExtra("adminPhone", selectedAdmin.getAdminPhone());
+                intent.putExtra("adminChildId", selectedAdmin.getAdminChildId());
+                startActivity(intent);
             }
         });
+
 
         return view;
     }

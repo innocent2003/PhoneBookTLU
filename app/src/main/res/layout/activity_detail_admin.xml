@@ -1,9 +1,71 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailAdminActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ImageView
+        android:id="@+id/adminLogoPreview"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@mipmap/ic_launcher"
+        android:contentDescription="Admin Logo Preview" />
+
+    <Button
+        android:id="@+id/btnUploadLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Upload Logo"
+        android:layout_marginTop="8dp" />
+
+    <EditText
+        android:id="@+id/adminName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/adminEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email" />
+
+    <EditText
+        android:id="@+id/adminWebsite"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Website" />
+
+    <EditText
+        android:id="@+id/adminAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Address" />
+
+    <EditText
+        android:id="@+id/adminPhone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone" />
+
+    <EditText
+        android:id="@+id/adminChildId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Child ID" />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update Admin" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Delete Admin"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

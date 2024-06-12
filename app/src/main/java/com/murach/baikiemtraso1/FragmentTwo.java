@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -50,6 +51,22 @@ public class FragmentTwo extends Fragment {
         loadEmployees();
 
         addEmployeeButton = view.findViewById(R.id.circularButton);
+        // Set item click listener to navigate to DetailEmployeeActivity
+        listViewEmployee.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Employee selectedEmployee = employeeList.get(position);
+                Intent intent = new Intent(getActivity(), DetailEmployeeActivity.class);
+                intent.putExtra("employeeId", selectedEmployee.getId());
+                intent.putExtra("employeeName", selectedEmployee.getEmployeeName());
+                intent.putExtra("employeeEmail", selectedEmployee.getEmployeeEmail());
+                intent.putExtra("employeePhone", selectedEmployee.getEmployeePhone());
+                intent.putExtra("employeeRole", selectedEmployee.getEmployeeRole());
+                intent.putExtra("adminId", selectedEmployee.getAdminId());
+                intent.putExtra("employeeImageUrl", selectedEmployee.getEmployeeAvatar());
+                startActivity(intent);
+            }
+        });
 
         // Set click listener to navigate to another activity
         addEmployeeButton.setOnClickListener(new View.OnClickListener() {
